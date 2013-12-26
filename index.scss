@@ -1,0 +1,445 @@
+$t-baseline: 21px;
+$t-size: 14px;
+
+@function t-baseline($n) {
+  @return $n * $t-baseline;
+}
+
+@function t-size($n) {
+  @return ($n/$t-size) * 1em;
+}
+
+@function t-lineheight($n) {
+  @return ($n/$t-baseline);
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Global Styles
+ * Don't edit these styles. They affect all things.
+ * ---------------------------------------------------------------------------------
+ */
+
+body {
+  font-family: "adelle-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #555555;
+  font-size: $t-size;
+  line-height: ($t-baseline/$t-size);
+  vertical-align: baseline;
+}
+
+/**
+ * Links, by default, use the color
+ * of the text around them rather than
+ * defaulting to blue
+ */
+
+a {
+  color: inherit;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+}
+
+img {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+small {
+  font-size: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+blockquote {
+  margin: 0;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Image Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+.t-imageLeft {
+  float: left;
+  margin: t-baseline(1);
+  margin-left: 0;
+  max-width: 320px;
+}
+
+.t-imageRight {
+  float: right;
+  margin: t-baseline(1);
+  margin-right: 0;
+  max-width: 320px;
+}
+
+.t-imageFull {
+  margin: t-baseline(1) 0;
+  max-width: 100%;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * List Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+/**
+ * Move a list inside. Normally, list bullets will sit
+ * outside of the content, allowing for better reading. However
+ * sometimes you want to list to be within the content border
+ */
+.t-listInside {
+  margin-left: 20px;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Table Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+.t-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  font-size: 13px;
+  line-height: 18px;
+  margin: t-baseline(1) 0;
+  td,
+  th {
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 10px;
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: left;
+    background: white;
+  }
+  th {
+    font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    background-color: #318C19;
+    background-image: linear-gradient(to bottom, #228b07, #1f7d07);
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+  }
+  tr:nth-child(2n-1) td {
+      background-color: #f5f5f5;
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Title Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+/**
+ * These styles set the size, weight, family and other text
+ * styles for heading sizes. We shouldn't need to add more titles
+ * than these. Any custom titles belong in the component where they
+ * are needed.
+ *
+ * Avoid setting colours here so that we can use modifiers
+ * to change it.
+ */
+
+/**
+ * This title style should always be green
+ */
+.t-h1 {
+  font-size: 4.236em;
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 60px;
+  letter-spacing: -2px; }
+
+.t-h2 {
+  font-size: 2.618em;
+  line-height: 42px;
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: -1.5px;
+  font-style: normal;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;}
+
+.t-h3 {
+  font-size: 1.618em;
+  font-weight: normal;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;}
+
+.t-h4 {
+  font-size: 1em;
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.t-h5 {
+  font-size: 1.1em;
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Link Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+/**
+ * Default link style. By default, links look like
+ * normal text when just using the anchor tag.
+ * The style of the link is set using a class like this,
+ * or by using a parent class
+ */
+.t-link {
+  color: #318C19;
+  text-decoration: underline;
+  &:hover {
+    color: #38A21D;
+  }
+}
+
+/**
+ * Make a link invisible. Useful for making
+ * titles links but without adding an underline.
+ * This is used when we want to be forgiving and
+ * allow users to click things, but it would look
+ * gross if it had an underline.
+ */
+.t-invisibleLink {
+  text-decoration: none;
+}
+
+/**
+ * A link that becomes more "linky" when it is hovered.
+ * Use this when you want something to not look like a
+ * link because it would be to dominant (eg. a list of links)
+ * but you want them to still be obviously clickable.
+ */
+.t-hoverLink {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/**
+ * Style for an inverse link to be used on dark backgrounds
+ */
+.t-inverseLink {
+  color: #fff;
+  text-decoration: underline;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    color: #fff;
+  }
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Text Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+.t-small {
+  font-size: t-size(12px);
+  line-height: 18px;
+}
+
+.t-legal {
+  @extend .t-small;
+  @extend .t-subtle;
+  display: block;
+  p,
+  li {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+.t-tiny {
+  font-size: 11px;
+  line-height: 15px;
+
+  .t-h1 & {
+    font-size: 0.310em;
+  }
+}
+
+.t-highlight {
+  color: #318C19;
+}
+
+.t-subtle {
+  color: #888;
+}
+
+.t-strong {
+  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.t-white,
+.t-inverse {
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.t-loud {
+  text-transform: uppercase;
+}
+
+.t-lead {
+  font-size: t-size(18px);
+  line-height: 23px;
+  text-align: left;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Paragraph Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+.t-right {
+  text-align: right;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-justify {
+  text-align: justify;
+}
+
+.t-tight {
+  line-height: 18px;
+}
+
+.t-loose {
+  line-height: 22px;
+}
+
+/**
+ * ---------------------------------------------------------------------------------
+ * Copy Styles
+ * ---------------------------------------------------------------------------------
+ */
+
+.t-copy {
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  ul,
+  ol,
+  table,
+  address,
+  small,
+  p {
+    margin-bottom: t-baseline(0.5);
+  }
+
+  p,
+  li,
+  address {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  mark {
+    @extend .t-highlight;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  a {
+    color: #318C19;
+    text-decoration: underline;
+    &:hover {
+      color: #38A21D;
+    }
+  }
+
+  small {
+    @extend .t-legal;
+  }
+
+  h1 {
+    @extend .t-h1;
+    margin-bottom: t-baseline(1);
+  }
+
+  h2 {
+    @extend .t-h2;
+    margin-bottom: t-baseline(0.5);
+    margin-top: t-baseline(2);
+  }
+
+  h3 {
+    @extend .t-h3;
+    margin-top: t-baseline(1.5);
+    margin-bottom: t-baseline(0.5);
+    text-transform: uppercase;
+  }
+
+  h4 {
+    @extend .t-h4;
+    margin-top: t-baseline(1);
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+}
+
+.t-inverseCopy {
+  @extend .t-copy;
+  @extend .t-white;
+  a,
+  a:hover {
+    color: #fff;
+  }
+}

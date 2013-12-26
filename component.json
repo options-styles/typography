@@ -1,0 +1,17 @@
+{
+  "name": "typography",
+  "version": "0.1.1",
+  "styles": [
+    "index.css"
+  ],
+  "development": {
+    "nib-styles/tick-list": "*",
+    "nib-styles/arrow-list": "*",
+    "nib-styles/messages": "*",
+    "necolas/normalize.css": "*",
+    "nib-styles/responsive-grid": "*",
+    "nib-styles/blocks": "*",
+    "suitcss/arrange": "*",
+    "nib-styles/buttons": "*"
+  }
+}
