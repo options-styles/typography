@@ -1,9 +1,8 @@
 {
   "name": "typography",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "styles": [
-    "index.css",
-    "index.scss"
+    "index.css"
   ],
   "development": {
     "nib-styles/tick-list": "*",
