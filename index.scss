@@ -1,3 +1,5 @@
+$webfont: "Gotham SSm A", "Gotham SSm B";
+
 $t-baseline: 21px;
 $t-size: 14px;
 
@@ -21,7 +23,7 @@ $t-size: 14px;
  */
 
 body {
-  font-family: "adelle-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   color: #555555;
@@ -137,7 +139,7 @@ blockquote {
     background: white;
   }
   th {
-    font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 500;
     background-color: #318C19;
     background-image: linear-gradient(to bottom, #228b07, #1f7d07);
@@ -171,7 +173,7 @@ blockquote {
  */
 .t-h1 {
   font-size: 4.236em;
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   line-height: 60px;
@@ -180,7 +182,7 @@ blockquote {
 .t-h2 {
   font-size: 2.618em;
   line-height: 42px;
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: -1.5px;
   font-style: normal;
   text-rendering:optimizeLegibility;
@@ -191,20 +193,20 @@ blockquote {
   font-weight: normal;
   line-height: 1.1;
   letter-spacing: -1px;
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;}
 
 .t-h4 {
   font-size: 1em;
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .t-h5 {
   font-size: 1.1em;
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 23px;
 }
@@ -304,7 +306,7 @@ blockquote {
 }
 
 .t-strong {
-  font-family: "colfax-web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $webfont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
 }
 
